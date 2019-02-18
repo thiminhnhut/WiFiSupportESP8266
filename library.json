@@ -1,0 +1,21 @@
+{
+    "name": "WiFiSupportESP8266",
+    "keywords": "WiFiSupportESP8266",
+    "description": "WiFi Support Library for ESP8266",
+    "authors": {
+        "name": "thiminhnhut",
+        "email": "thiminhnhut@gmail.com",
+        "url": "https://github.com/thiminhnhut",
+        "maintainer": true
+    },
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thiminhnhut/WiFiSupportESP8266.git"
+    },
+    "export": {
+        "include": "WiFiSupportESP8266"
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif8266"
+}

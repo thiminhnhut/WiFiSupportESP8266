@@ -1,0 +1,19 @@
+##############################################
+# Syntax Coloring Map For WiFiSupportESP8266
+##############################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+WiFiSupportESP8266	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+NetWork	        KEYWORD2
+isConnected	    KEYWORD2
+disConnected	KEYWORD2
+isSmartConfig   KEYWORD2
+getNetwork      KEYWORD2
