@@ -13,9 +13,12 @@ WiFiSupportESP8266 wifiSupport(&__SERIAL_MONITOR__, __LED_STATUS__, __LED_STATE_
 void setup() {
     __SERIAL_MONITOR__.begin(__BAUD_RATE__);
 
-    // bool isConnected = wifiSupport.isSmartConfig(__TIMEOUT__);
+    bool isConnected = wifiSupport.isSmartConfig(__TIMEOUT__);
+    if (!isConnected) {
+        ESP.restart();
+    }
 
-    bool isConnected = wifiSupport.isSmartConfig();
+    // bool isConnected = wifiSupport.isSmartConfig();
 
     __SERIAL_MONITOR__.println("Finish!");
 }

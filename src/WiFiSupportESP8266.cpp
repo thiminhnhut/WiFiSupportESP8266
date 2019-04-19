@@ -53,17 +53,17 @@ bool WiFiSupportESP8266::isSmartConfig() {
     _debug_start_smart_config();
 
     WiFi.mode(WIFI_STA);
-    delay(5000);
+    _delay(5000);
 
     unsigned long _start = millis();
     unsigned int cnt = 0;
     while (!isConnected()) {
-        delay(500);
+        _delay(500);
         _debug_wait_connect();
         if (cnt++ >= 10) {
             WiFi.beginSmartConfig();
             while (true) {
-                delay(1000);
+                _delay(1000);
                 if (WiFi.smartConfigDone()) {
                     break;
                 }
@@ -84,7 +84,7 @@ bool WiFiSupportESP8266::isSmartConfig() {
 
             return true;
         }
-        delay(500);
+        _delay(500);
     }
 
     return false;
@@ -96,17 +96,17 @@ bool WiFiSupportESP8266::isSmartConfig(unsigned int timeout) {
     _debug_start_smart_config();
 
     WiFi.mode(WIFI_STA);
-    delay(5000);
+    _delay(5000);
 
     unsigned long _start = millis();
     unsigned int cnt = 0;
     while (!isConnected() && millis() - _start <= timeout) {
-        delay(500);
+        _delay(500);
         _debug_wait_connect();
         if (cnt++ >= 10) {
             WiFi.beginSmartConfig();
             while (millis() - _start <= timeout) {
-                delay(1000);
+                _delay(1000);
                 if (WiFi.smartConfigDone()) {
                     break;
                 }
@@ -261,9 +261,9 @@ void WiFiSupportESP8266::_off() {
 void WiFiSupportESP8266::_blink() {
     for (unsigned char i = 0; i < 20; i++) {
         _on();
-        delay(500);
+        _delay(500);
         _off();
-        delay(500);
+        _delay(500);
     }
 }
 
@@ -299,9 +299,9 @@ void WiFiSupportESP8266::_debug_connect_wifi() {
 void WiFiSupportESP8266::_debug_wait_connect() {
     if (_debug) {
         _print->print(F("."));
-        delay(100);
+        _delay(100);
     } else {
-        delay(0);
+        _delay(0);
     }
 }
 
@@ -344,5 +344,12 @@ void WiFiSupportESP8266::_debug_smart_config_success() {
 void WiFiSupportESP8266::_debug_smart_config_fail() {
     if (_debug) {
         _print->println(F("\nSmartConfig Fail, Timeout error!"));
+    }
+}
+
+void WiFiSupportESP8266::_delay(unsigned int t) {
+    unsigned long _t = millis() + t;
+    while (millis() < _t) {
+        yield();
     }
 }

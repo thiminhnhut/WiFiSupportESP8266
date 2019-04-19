@@ -4,8 +4,8 @@ Thư viện kết nối WiFi cho ESP8266
 
 :Info: Github <https://github.com/thiminhnhut/WiFiSupportESP8266>
 :Author: Thi Minh Nhựt <thiminhnhut@gmail.com>
-:Date: $Date: 19/02/2019 $
-:Revision: $Revision: 1.0.0 $
+:Date: $Date: 19/04/2019 $
+:Revision: $Revision: 1.1.0 $
 :Description: Thư viện kết nối WiFi cho ESP8266
 
 ===============================================================
@@ -86,3 +86,5 @@ Revision
 ========
 
 * `Version 1.0.0 <https://github.com/thiminhnhut/WiFiSupportESP8266/releases/tag/1.0.0>`_
+
+* `Version 1.1.0 <https://github.com/thiminhnhut/WiFiSupportESP8266/releases/tag/1.1.0>`_

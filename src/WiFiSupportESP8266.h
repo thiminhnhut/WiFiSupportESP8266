@@ -67,6 +67,8 @@ private:
     void _debug_smart_config_success();
     void _debug_smart_config_fail();
 
+    void _delay(unsigned int t);
+
 public:
 
     WiFiSupportESP8266();
